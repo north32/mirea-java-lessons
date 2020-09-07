@@ -1,4 +1,4 @@
-package ru.north32.mireajava.exercise4;
+package ru.north32.mireajava.lesson1.exercise4;
 
 import java.util.Arrays;
 import java.util.Random;

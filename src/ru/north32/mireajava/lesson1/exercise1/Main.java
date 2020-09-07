@@ -1,4 +1,4 @@
-package ru.north32.mireajava.exercise1;
+package ru.north32.mireajava.lesson1.exercise1;
 
 public class Main {
 
