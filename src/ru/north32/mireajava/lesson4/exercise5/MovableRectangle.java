@@ -1,9 +1,10 @@
 package ru.north32.mireajava.lesson4.exercise5;
 
+import ru.north32.mireajava.lesson4.exercise2.Rectangle;
 import ru.north32.mireajava.lesson4.exercise4.Movable;
 import ru.north32.mireajava.lesson4.exercise4.MovablePoint;
 
-public class MovableRectangle implements Movable {
+public class MovableRectangle extends Rectangle implements Movable {
 
     private final MovablePoint topLeft;
     private final MovablePoint bottomRight;

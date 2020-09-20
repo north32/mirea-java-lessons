@@ -1,6 +1,8 @@
 package ru.north32.mireajava.lesson4.exercise4;
 
-public class MovableCircle implements Movable {
+import ru.north32.mireajava.lesson4.exercise2.Circle;
+
+public class MovableCircle extends Circle implements Movable {
 
     private final int radius;
     private final MovablePoint center;
