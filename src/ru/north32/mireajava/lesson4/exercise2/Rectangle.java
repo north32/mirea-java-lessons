@@ -1,7 +1,5 @@
 package ru.north32.mireajava.lesson4.exercise2;
 
-import ru.north32.mireajava.lesson4.exercise1.Shape;
-
 public class Rectangle extends Shape {
 
     protected double width;
