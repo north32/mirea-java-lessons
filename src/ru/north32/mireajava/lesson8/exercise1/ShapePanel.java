@@ -10,11 +10,22 @@ import java.util.Random;
 public class ShapePanel extends JPanel {
 
     private List<Shape> shapes = new ArrayList<>();
+    private Dimension dimension;
+    private int n;
 
     public ShapePanel(Dimension dimension, int n) {
-        setBackground(Color.BLACK);
-        setPreferredSize(dimension);
+        this.n = n;
+        this.dimension = dimension;
+        refresh();
+    }
 
+    @Override
+    public Dimension getPreferredSize() {
+        return dimension;
+    }
+
+    public void refresh() {
+        shapes = new ArrayList<>(n);
         List<Color> colors = List.of(
                 Color.RED, Color.ORANGE, Color.YELLOW,
                 Color.GREEN, Color.CYAN, Color.BLUE, Color.MAGENTA
