@@ -15,14 +15,14 @@ public class Diamond extends Shape {
         int[] yPoints = {0, 9, 18, 9};
 
         Graphics2D g2d = (Graphics2D) g;
-        GeneralPath star = new GeneralPath();
+        GeneralPath diamond = new GeneralPath();
 
-        star.moveTo(xPoints[0] + getX(), yPoints[0] + getY());
+        diamond.moveTo(xPoints[0] + getX(), yPoints[0] + getY());
         for (int i = 1; i < xPoints.length; i++) {
-            star.lineTo(xPoints[i] + getX(), yPoints[i] + getY());
+            diamond.lineTo(xPoints[i] + getX(), yPoints[i] + getY());
         }
-        star.closePath();
+        diamond.closePath();
         g2d.setColor(getColor());
-        g2d.fill(star);
+        g2d.fill(diamond);
     }
 }

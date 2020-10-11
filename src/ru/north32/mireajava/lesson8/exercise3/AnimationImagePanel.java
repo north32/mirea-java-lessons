@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class AnimationImagePanel extends JPanel {
 
-    private ImageIcon image;
+    private final ImageIcon image;
 
     public AnimationImagePanel(String path) {
         image = new ImageIcon(path);

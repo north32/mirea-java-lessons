@@ -8,7 +8,7 @@ import java.awt.*;
 public class Application {
 
     public Application() {
-        ShapePanel shapePanel = new ShapePanel(new Dimension(400,400), 20);
+        ShapePanel shapePanel = new ShapePanel(new Dimension(400, 400), 20);
         JButton button = new JButton("refresh");
         button.addActionListener(e -> {
             shapePanel.refresh();
