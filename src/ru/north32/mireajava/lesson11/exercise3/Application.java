@@ -35,7 +35,7 @@ public class Application {
                 "Black", Color.BLACK
         ).forEach((key, value) -> {
             JMenuItem button = new JMenuItem(key);
-            button.addActionListener(e -> area.setDisabledTextColor(value));
+            button.addActionListener(e -> area.setSelectedTextColor(value));
             menu.add(button);
         });
 
