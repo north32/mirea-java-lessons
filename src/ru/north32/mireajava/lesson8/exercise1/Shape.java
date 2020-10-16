@@ -4,6 +4,12 @@ import java.awt.*;
 
 public abstract class Shape {
 
+        public interface Supplier {
+
+                Shape get(Color color, int x, int y);
+
+        }
+
         public Color getColor() {
                 return color;
         }

@@ -2,7 +2,6 @@ package ru.north32.mireajava.lesson8.exercise1;
 
 import javax.swing.*;
 import java.awt.*;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -31,25 +30,16 @@ public class ShapePanel extends JPanel {
                 Color.GREEN, Color.CYAN, Color.BLUE, Color.MAGENTA
         );
 
-        List<Class<? extends Shape>> supplies = List.of(Circle.class, Star.class, Diamond.class);
-        Random random = new Random();
-        for (int i = 0; i < n; i++) {
-            try {
-                Shape shape = random(random, supplies)
-                        .getDeclaredConstructor(
-                                Color.class,
-                                int.class,
-                                int.class
-                        )
-                        .newInstance(
-                                random(random, colors),
-                                random.nextInt(dimension.height),
-                                random.nextInt(dimension.width));
+        List<Shape.Supplier> suppliers = List.of(Circle::new, Star::new, Diamond::new);
 
-                shapes.add(shape);
-            } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
-                e.printStackTrace();
-            }
+        Random r = new Random();
+        for (int i = 0; i < n; i++) {
+            Shape shape = random(r, suppliers)
+                    .get(random(r, colors),
+                            r.nextInt(dimension.width),
+                            r.nextInt(dimension.height)
+                    );
+            shapes.add(shape);
         }
     }
 
