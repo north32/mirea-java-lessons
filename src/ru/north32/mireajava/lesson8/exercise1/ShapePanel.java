@@ -34,11 +34,11 @@ public class ShapePanel extends JPanel {
 
         Random r = new Random();
         for (int i = 0; i < n; i++) {
-            Shape shape = random(r, suppliers)
-                    .get(random(r, colors),
-                            r.nextInt(dimension.width),
-                            r.nextInt(dimension.height)
-                    );
+            Shape shape = random(r, suppliers).get(
+                    random(r, colors),
+                    r.nextInt(dimension.height),
+                    r.nextInt(dimension.width)
+            );
             shapes.add(shape);
         }
     }
