@@ -36,7 +36,7 @@ public class MergeSort<T> implements SortConsumer<T> {
 
         for (int i = low; i < high + 1; i++) {
             if (leftIndex < leftArray.length && rightIndex < rightArray.length) {
-                if (comparator.compare(leftArray[leftIndex], rightArray[rightIndex]) > 0) {
+                if (comparator.compare(leftArray[leftIndex], rightArray[rightIndex]) < 0) {
                     arr[i] = leftArray[leftIndex];
                     leftIndex++;
                 } else {

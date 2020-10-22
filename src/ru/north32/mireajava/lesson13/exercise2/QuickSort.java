@@ -23,7 +23,7 @@ public class QuickSort<T> implements SortConsumer<T> {
         int i = (begin - 1);
 
         for (int j = begin; j < end; j++) {
-            if (comparator.compare(arr[j], pivot) >= 0) {
+            if (comparator.compare(arr[j], pivot) <= 0) {
                 i++;
 
                 T swapTemp = arr[i];
