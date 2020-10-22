@@ -1,9 +1,8 @@
 package ru.north32.mireajava.lesson13.exercise2;
 
 import java.util.Comparator;
-import java.util.function.BiConsumer;
 
-public class MergeSort<T> implements BiConsumer<T[], Comparator<T>> {
+public class MergeSort<T> implements SortConsumer<T> {
 
     @Override
     public void accept(T[] arr, Comparator<T> comparator) {

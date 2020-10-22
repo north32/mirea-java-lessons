@@ -1,8 +1,6 @@
 package ru.north32.mireajava.lesson13.exercise1;
 
-import java.util.Objects;
-
-public class Student implements Comparable<Student> {
+public class Student {
 
     private int IDNumber;
     private String name;
@@ -50,19 +48,6 @@ public class Student implements Comparable<Student> {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
-        return IDNumber == student.IDNumber;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(IDNumber);
-    }
-
-    @Override
     public String toString() {
         return "Student{" +
                 "IDNumber=" + IDNumber +
@@ -70,10 +55,5 @@ public class Student implements Comparable<Student> {
                 ", age=" + age +
                 ", gpa=" + gpa +
                 '}';
-    }
-
-    @Override
-    public int compareTo(Student o) {
-        return IDNumber - o.getIDNumber();
     }
 }

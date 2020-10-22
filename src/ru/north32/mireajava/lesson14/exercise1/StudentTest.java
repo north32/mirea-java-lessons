@@ -14,8 +14,17 @@ public class StudentTest {
                 new Student(6, "Frank", 19, new double[] {3, 3, 3})
         };
 
-        new LinearSearch<Student>().apply(students, students[5]).ifPresent(System.out::println);
-        new BinarySearch<Student>().apply(students, students[0]).ifPresent(System.out::println);
+        new LinearSearch<Student>().apply(
+                students,
+                5,
+                Student::getIDNumber
+        ).ifPresent(System.out::println);
+
+        new BinarySearch<Student>().apply(
+                students,
+                0,
+                Student::getIDNumber
+        ).ifPresent(System.out::println);
 
     }
 

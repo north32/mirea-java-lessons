@@ -1,15 +1,15 @@
 package ru.north32.mireajava.lesson14.exercise1;
 
 import java.util.Optional;
-import java.util.function.BiFunction;
+import java.util.function.Function;
 
-public class LinearSearch<T> implements BiFunction<T[], T, Optional<Integer>> {
+public class LinearSearch<T> implements SearchFunction<T> {
 
     @Override
-    public Optional<Integer> apply(T[] ts, T t) {
+    public <E extends Comparable<E>> Optional<Integer> apply(T[] ts, E e, Function<T, E> function) {
         Integer index = null;
         for (int i = 0; i < ts.length; i++) {
-            if (ts[i].equals(t)) {
+            if (function.apply(ts[i]).compareTo(e) == 0) {
                 index = i;
                 break;
             }

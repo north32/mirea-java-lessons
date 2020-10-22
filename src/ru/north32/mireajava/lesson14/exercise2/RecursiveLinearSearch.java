@@ -1,22 +1,24 @@
 package ru.north32.mireajava.lesson14.exercise2;
 
-import java.util.Optional;
-import java.util.function.BiFunction;
+import ru.north32.mireajava.lesson14.exercise1.SearchFunction;
 
-public class RecursiveLinearSearch<T> implements BiFunction<T[], T, Optional<Integer>> {
+import java.util.Optional;
+import java.util.function.Function;
+
+public class RecursiveLinearSearch<T> implements SearchFunction<T> {
 
     @Override
-    public Optional<Integer> apply(T[] ts, T t) {
-        return search(ts, t, 0);
+    public <E extends Comparable<E>> Optional<Integer> apply(T[] ts, E e, Function<T, E> function) {
+        return search(ts, e, function, 0);
     }
 
-    private Optional<Integer> search(T[] ts, T t, int index) {
+    private <E extends Comparable<E>> Optional<Integer> search(T[] ts, E e, Function<T, E> function, int index) {
         if (index == ts.length) {
             return Optional.empty();
         }
-        if (ts[index] == t) {
+        if (function.apply(ts[index]).compareTo(e) == 0) {
             return Optional.of(index);
         }
-        return search(ts, t, index + 1);
+        return search(ts, e, function, index + 1);
     }
 }

@@ -1,28 +1,30 @@
 package ru.north32.mireajava.lesson14.exercise2;
 
-import java.util.Optional;
-import java.util.function.BiFunction;
+import ru.north32.mireajava.lesson14.exercise1.SearchFunction;
 
-public class RecursiveBinarySearch<T extends Comparable<T>> implements BiFunction<T[], T, Optional<Integer>> {
+import java.util.Optional;
+import java.util.function.Function;
+
+public class RecursiveBinarySearch<T> implements SearchFunction<T> {
 
     @Override
-    public Optional<Integer> apply(T[] ts, T t) {
-        return search(ts, t, 0, ts.length - 1);
+    public <E extends Comparable<E>>  Optional<Integer> apply(T[] ts, E e, Function<T, E> function) {
+        return search(ts, e, function, 0, ts.length - 1);
     }
 
-    private Optional<Integer> search(T[] ts, T t, int low, int high) {
+    private <E extends Comparable<E>> Optional<Integer> search(T[] ts, E e, Function<T, E> function, int low, int high) {
         int middle = (low + high) / 2;
 
         if (high < low) {
             return Optional.empty();
         }
 
-        if (ts[middle].equals(t)) {
+        if (function.apply(ts[middle]).compareTo(e) == 0) {
             return Optional.of(middle);
-        } else if (ts[middle].compareTo(t) > 0) {
-            return search(ts, t, low, middle - 1);
+        } else if (function.apply(ts[middle]).compareTo(e) > 0) {
+            return search(ts, e, function, low, middle - 1);
         } else {
-            return search(ts, t, middle + 1, high);
+            return search(ts, e, function, middle + 1, high);
         }
     }
 }

@@ -1,21 +1,21 @@
 package ru.north32.mireajava.lesson14.exercise1;
 
 import java.util.Optional;
-import java.util.function.BiFunction;
+import java.util.function.Function;
 
-public class BinarySearch<T extends Comparable<T>> implements BiFunction<T[], T, Optional<Integer>> {
+public class BinarySearch<T> implements SearchFunction<T> {
 
     @Override
-    public Optional<Integer> apply(T[] ts, T t) {
+    public <E extends Comparable<E>> Optional<Integer> apply(T[] ts, E e, Function<T, E> function) {
         Integer index = null;
         int low = 0, high = ts.length - 1;
         while (low <= high) {
             int mid = (low + high) / 2;
-            if (ts[mid].compareTo(t) < 0) {
+            if (function.apply(ts[mid]).compareTo(e) < 0) {
                 low = mid + 1;
-            } else if (ts[mid].compareTo(t) > 0) {
+            } else if (function.apply(ts[mid]).compareTo(e) > 0) {
                 high = mid - 1;
-            } else if (ts[mid].equals(t)) {
+            } else if (function.apply(ts[mid]).compareTo(e) == 0) {
                 index = mid;
                 break;
             }

@@ -1,8 +1,7 @@
 package ru.north32.mireajava.lesson15.exercise3;
 
-import ru.north32.mireajava.lesson14.exercise1.LinearSearch;
-
-import java.util.*;
+import java.util.AbstractList;
+import java.util.Arrays;
 
 public class ArrayList<E> extends AbstractList<E> {
 
@@ -27,10 +26,6 @@ public class ArrayList<E> extends AbstractList<E> {
         return size == 0;
     }
 
-    @Override
-    public boolean contains(Object o) {
-        return new LinearSearch<>().apply(array, o).isPresent();
-    }
 
     @Override
     public boolean add(E e) {
