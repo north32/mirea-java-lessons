@@ -28,7 +28,7 @@ public class Main {
         System.out.println(Arrays.toString(students));
 
         System.out.println(
-                "Поиск и сортировка:"
+                "Сортировка и поиск:"
                 + "\n0 по GPA"
                 + "\n~ по имени"
         );
