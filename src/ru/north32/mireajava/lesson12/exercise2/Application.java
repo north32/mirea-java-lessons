@@ -7,7 +7,7 @@ import javax.swing.*;
 public class Application {
 
     public Application() {
-        JFrame frame = new JFrame("Test frame");
+        JFrame frame = new JFrame("Planets");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel label = new JLabel();
