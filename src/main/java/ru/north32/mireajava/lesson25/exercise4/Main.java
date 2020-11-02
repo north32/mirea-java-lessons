@@ -1,4 +1,4 @@
-package ru.north32.mireajava.lesson25.lesson4;
+package ru.north32.mireajava.lesson25.exercise4;
 
 import java.util.List;
 
