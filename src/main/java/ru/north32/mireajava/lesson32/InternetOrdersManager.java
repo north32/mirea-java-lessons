@@ -1,10 +1,11 @@
-package ru.north32.mireajava.lesson30;
+package ru.north32.mireajava.lesson32;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class InternetOrdersManager implements OrdersManager {
+public class InternetOrdersManager implements OrdersManager, Serializable {
 
-    private static class Node {
+    private static class Node implements Serializable {
         Node prev, next;
         Order order;
 
