@@ -1,0 +1,22 @@
+package ru.north32.mireajava.lesson30;
+
+public enum  DrinkTypeEnum {
+    BEER,
+    WINE,
+    VODKA,
+    BRANDY,
+    CHAMPAGNE,
+    WHISKEY,
+    TEQUILA,
+    RUM,
+    VERMOUTH,
+    LIQUOR,
+    JAGERMEISTER,
+    JUICE,
+    COFFEE,
+    GREEN_TEA,
+    BLACK_TEA,
+    MILK,
+    WATER,
+    SODA
+}
