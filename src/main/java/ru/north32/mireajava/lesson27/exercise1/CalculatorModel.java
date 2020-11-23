@@ -32,13 +32,18 @@ public class CalculatorModel {
     }
 
     private int makeOperation(String i, int a, int b) {
-        return switch (i) {
-            case "+" -> b + a;
-            case "-" -> b - a;
-            case "*" -> b * a;
-            case "/" -> b / a;
-            default -> 0;
-        };
+        switch (i) {
+            case "+":
+                return b + a;
+            case "-":
+                return b - a;
+            case "*":
+                return b * a;
+            case "/":
+                return b / a;
+            default:
+                return 0;
+        }
     }
 
 }

@@ -69,30 +69,34 @@ public class Snake {
         int y = snake.getFirst().getY();
 
         switch (direction) {
-            case LEFT -> {
+            case LEFT: {
                 x -= 1;
                 if (x < 0) {
                     x = gameModel.CANVAS_WIDTH - 1;
                 }
             }
-            case UP -> {
+            break;
+            case UP: {
                 y -= 1;
                 if (y < 0) {
                     y = gameModel.CANVAS_HEIGHT - 1;
                 }
             }
-            case RIGHT -> {
+            break;
+            case RIGHT: {
                 x += 1;
                 if (x == gameModel.CANVAS_WIDTH) {
                     x = 0;
                 }
             }
-            case DOWN -> {
+            break;
+            case DOWN: {
                 y += 1;
                 if (y == gameModel.CANVAS_HEIGHT) {
                     y = 0;
                 }
             }
+            break;
         }
 
         if (isInSnake(x, y)) {

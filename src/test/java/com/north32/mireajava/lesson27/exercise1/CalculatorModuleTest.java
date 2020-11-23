@@ -43,7 +43,4 @@ public class CalculatorModuleTest {
         calculatorModel.calculate("1 0 /");
     }
 
-
-
-
 }
